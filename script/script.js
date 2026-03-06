@@ -1,12 +1,17 @@
 document.getElementById("form-donacion").addEventListener("submit", function(e){
-  e.preventDefault();
 
-  const monto = document.getElementById("monto").value;
+e.preventDefault();
 
-  if (!monto || monto <= 0) {
-    alert("Por favor ingresa un monto válido.");
-    return;
-  }
+const monto = document.getElementById("monto").value;
 
-  alert("¡Gracias por tu donación! (Demo)");
+if(!monto || monto <= 0){
+
+alert("Por favor ingresa un monto válido.");
+
+return;
+
+}
+
+alert("¡Gracias por tu donación! (Demo)");
+
 });
