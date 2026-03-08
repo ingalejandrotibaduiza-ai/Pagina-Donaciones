@@ -1,241 +1,205 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Página de Donaciones</title>
-
-<link rel="stylesheet" href="styles/styles.css">
-
-<!-- TEMA 20: VIDEO -->
-<!-- TEMA 21: AUDIO -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donaciones Solidarias</title>
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
-
 <body>
 
-<header>
-    <img src="imagen1.jpg" alt="Imagen donación" width="150">
-    <h1>Donaciones para una buena causa</h1>
+  <header id="inicio" class="hero">
+    <div class="hero-contenido">
+      <img src="imagen1.jpg" alt="Imagen de ayuda solidaria" class="logo">
+      <div class="hero-texto">
+        <h1>Donaciones Solidarias</h1>
+        <p>
+          Con tu aporte podemos transformar vidas, apoyar familias
+          y llevar esperanza a quienes más lo necesitan.
+        </p>
+        <a href="#donar" class="btn-hero">Donar ahora</a>
+      </div>
+    </div>
+  </header>
 
-    <p>
-        Bienvenido a nuestra página de donaciones.<br>
-        Con tu ayuda podemos apoyar a más personas.
-    </p>
-</header>
-
-<nav>
+  <nav>
     <a href="#inicio">Inicio</a>
+    <a href="#causa">Causa</a>
     <a href="#donar">Donar</a>
-    <a href="#info">Información</a>
+    <a href="#multimedia">Multimedia</a>
     <a href="#contacto">Contacto</a>
-</nav>
-
-<main id="inicio">
-
-<!-- TEMA 11: FLOAT -->
-<section class="float-section">
-
-<div class="float-img">
-<img src="imagen1.jpg" width="200">
-</div>
-
-<div class="float-text">
-<h2>Apoya nuestra causa</h2>
-<p>
-Tu ayuda permite apoyar familias, educación y bienestar.
-Cada aporte suma para mejorar la vida de muchas personas.
-</p>
-</div>
-
-</section>
-
-<!-- TEMA 12: CENTRAR CONTENIDO -->
-<section class="centrado">
-<h2>Apoyo comunitario</h2>
-<p>Trabajamos para ayudar a comunidades vulnerables.</p>
-</section>
-
-<!-- TEMA 13: FLEXBOX -->
-<section class="flex-contenedor">
-
-<div class="flex-item">Educación</div>
-<div class="flex-item">Alimentación</div>
-<div class="flex-item">Salud</div>
-
-</section>
-
-<!-- TEMA 14: POSITION -->
-<section class="position-box">
-
-<div class="etiqueta">
-Nuevo
-</div>
-
-<h2>Campaña especial</h2>
-<p>Apoya nuestra nueva campaña solidaria.</p>
-
-</section>
-
-<!-- TEMA 15: TRANSFORM -->
-<section class="transform-box">
-
-<h2 class="zoom">Apoya con tu donación</h2>
-
-</section>
-
-<section id="donar">
-
-<h2>Haz una donación</h2>
-
-<p>
-Puedes elegir un monto y apoyarnos.<br>
-<b>Cualquier valor sirve</b> para ayudar.
-</p>
-
-<article>
-
-<h3>Formulario de donación</h3>
-
-<p>Completa los datos y presiona el botón.</p>
-
-<!-- TEMA 16: FORMULARIOS -->
-<form id="form-donacion">
-
-<label for="monto">Monto:</label><br>
-<input type="number" id="monto" placeholder="Ej: 5000" required><br><br>
-
-<label for="nombre">Nombre:</label><br>
-<input type="text" id="nombre" placeholder="Tu nombre" required><br><br>
-
-<button type="submit">Donar</button>
-
-</form>
-
-</article>
-
-</section>
-
-<section id="info">
-
-<h2>¿Para qué es la donación?</h2>
-
-<p>
-Las donaciones se utilizan para:<br>
-<em>alimentación, educación y bienestar</em>.
-</p>
-
-<h4>Lista de apoyos</h4>
-
-<ul>
-<li>Comprar mercados para familias.</li>
-<li>Entregar útiles escolares.</li>
-<li>Apoyar actividades comunitarias.</li>
-<li>Ayudar en emergencias.</li>
-</ul>
-
-<h4>Definiciones</h4>
-
-<dl>
-<dt><b>Donación:</b></dt>
-<dd>Aporte voluntario para ayudar a una causa.</dd>
-
-<dt><b>Transparencia:</b></dt>
-<dd>Uso claro y responsable del dinero.</dd>
-</dl>
-
-<h6>Mensaje final</h6>
-<p class="h7">Gracias por apoyar 💚</p>
-
-</section>
-
-<!-- TEMA 17: IFRAME -->
-<section>
-
-<h2>Ubicación</h2>
-
-<iframe
-width="100%"
-height="300"
-src="https://www.google.com/maps?q=Bogota&output=embed">
-</iframe>
-
-</section>
-
-<!-- TEMA 18: TRANSITION -->
-<section>
-
-<h2 class="hover-box">Pasa el mouse aquí</h2>
-
-</section>
-
-<!-- TEMA 19: COLUMNAS DE TEXTO -->
-<section class="columnas">
-
-<h2>Nuestra misión</h2>
-
-<p>
-Nuestro objetivo es ayudar a las personas que más lo necesitan.
-Gracias a las donaciones podemos apoyar diferentes proyectos
-sociales enfocados en educación, alimentación y bienestar
-comunitario para mejorar la calidad de vida.
-</p>
-
-</section>
-
-<!-- TEMA 20: VIDEO -->
-<section>
-
-<h2>Video de la campaña</h2>
-
-<video controls width="100%">
-
-<source src="video.mp4" type="video/mp4">
-
-</video>
-
-</section>
-
-<!-- TEMA 21: AUDIO -->
-<section>
-
-<h2>Mensaje de agradecimiento</h2>
-
-<audio controls>
-
-<source src="audio.mp3" type="audio/mpeg">
-
-</audio>
-
-</section>
-
-<section id="contacto">
-
-<h2>Contacto</h2>
-
-<article>
-
-<h3>Datos</h3>
-
-<p><strong>Correo:</strong> contacto@donaciones.com</p>
-
-<p><strong>Teléfono:</strong> 300 000 0000</p>
-
-</article>
-
-</section>
-
-</main>
-
-<footer>
-
-<p>
-Gracias por visitar la página.<br>
-&copy; 2026 - Página de Donaciones
-</p>
-
-</footer>
-
-<script src="script/script.js"></script>
-
+  </nav>
+
+  <main class="contenedor">
+
+    <!-- TEMA 11: FLOAT -->
+    <section id="causa" class="card float-section">
+      <div class="float-img">
+        <img src="imagen1.jpg" alt="Apoyo comunitario" width="170">
+      </div>
+      <div class="float-text">
+        <h2>Apoya nuestra causa</h2>
+        <p>
+          Cada donación contribuye a llevar alimentos, educación
+          y apoyo social a comunidades vulnerables.
+        </p>
+      </div>
+    </section>
+
+    <!-- TEMA 12: CENTRAR CONTENIDO -->
+    <section class="card centrado">
+      <h2>Un pequeño aporte puede hacer una gran diferencia</h2>
+      <p>Trabajamos con amor, transparencia y compromiso social.</p>
+    </section>
+
+    <!-- TEMA 13: FLEXBOX -->
+    <section class="card">
+      <h2>Nuestras áreas de apoyo</h2>
+      <div class="flex-contenedor">
+        <div class="flex-item">📘 Educación</div>
+        <div class="flex-item">🍲 Alimentación</div>
+        <div class="flex-item">💚 Bienestar</div>
+      </div>
+    </section>
+
+    <section class="doble-grid">
+      <!-- TEMA 14: POSITION -->
+      <section class="card position-box">
+        <div class="etiqueta">Campaña activa</div>
+        <h2>Ayuda especial del mes</h2>
+        <p>
+          Este mes estamos reuniendo fondos para apoyar familias
+          en situación de emergencia.
+        </p>
+      </section>
+
+      <!-- TEMA 15: TRANSFORM -->
+      <section class="card transform-box centrado">
+        <h2 class="zoom">Tu donación cambia vidas ✨</h2>
+        <p>Haz parte de esta red de ayuda y esperanza.</p>
+      </section>
+    </section>
+
+    <section class="doble-grid">
+      <!-- TEMA 16: FORMULARIO -->
+      <section id="donar" class="card">
+        <h2>Haz tu donación</h2>
+        <form id="form-donacion" class="formulario">
+          <div>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" placeholder="Escribe tu nombre" required>
+          </div>
+
+          <div>
+            <label for="monto">Monto</label>
+            <input type="number" id="monto" placeholder="Ej: 5000" required>
+          </div>
+
+          <div class="boton-form">
+            <button type="submit">Donar</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>¿Para qué es la donación?</h2>
+        <p>
+          Tus aportes se destinan a proyectos de
+          <em>alimentación, educación y bienestar comunitario</em>.
+        </p>
+
+        <h3>Apoyos que realizamos</h3>
+        <ul>
+          <li>Entrega de mercados</li>
+          <li>Útiles escolares</li>
+          <li>Actividades comunitarias</li>
+          <li>Ayudas en emergencias</li>
+        </ul>
+      </section>
+    </section>
+
+    <section class="card">
+      <h2>Transparencia</h2>
+      <dl>
+        <dt><strong>Donación:</strong></dt>
+        <dd>Aporte voluntario para una causa social.</dd>
+
+        <dt><strong>Compromiso:</strong></dt>
+        <dd>Trabajo responsable y cercano con la comunidad.</dd>
+
+        <dt><strong>Transparencia:</strong></dt>
+        <dd>Uso claro y responsable de los recursos.</dd>
+      </dl>
+
+      <p class="mensaje-final">Gracias por apoyar nuestra misión 💚</p>
+    </section>
+
+    <section class="doble-grid">
+      <!-- TEMA 17: IFRAME -->
+      <section class="card">
+        <h2>Ubicación</h2>
+        <iframe
+          src="https://www.google.com/maps?q=Bogota&output=embed"
+          width="100%"
+          height="180"
+          style="border:0; border-radius:12px;"
+          allowfullscreen=""
+          loading="lazy">
+        </iframe>
+      </section>
+
+      <!-- TEMA 18: TRANSITION -->
+      <section class="card">
+        <h2 class="hover-box">Pasa el mouse aquí 💫</h2>
+      </section>
+    </section>
+
+    <!-- TEMA 19: COLUMNAS -->
+    <section class="card">
+      <h2>Nuestra misión</h2>
+      <div class="columnas">
+        <p>
+          Nuestro objetivo es mejorar la calidad de vida de las personas
+          que más lo necesitan. Gracias a la solidaridad de muchas personas,
+          podemos desarrollar acciones de apoyo social enfocadas en educación,
+          alimentación, bienestar comunitario y acompañamiento humano.
+        </p>
+      </div>
+    </section>
+
+    <section class="doble-grid" id="multimedia">
+      <!-- TEMA 20: VIDEO -->
+      <section class="card">
+        <h2>Video de agradecimiento</h2>
+        <video controls width="100%" class="media-redonda">
+          <source src="video.mp4" type="video/mp4">
+          Tu navegador no soporta video.
+        </video>
+      </section>
+
+      <!-- TEMA 21: AUDIO -->
+      <section class="card">
+        <h2>Mensaje de agradecimiento</h2>
+        <p>Escucha un mensaje especial para nuestros donantes.</p>
+        <audio controls class="audio-estilo">
+          <source src="audio.mp3" type="audio/mpeg">
+          Tu navegador no soporta audio.
+        </audio>
+      </section>
+    </section>
+
+    <section id="contacto" class="card contacto">
+      <h2>Contacto</h2>
+      <p><strong>Correo:</strong> contacto@donaciones.com</p>
+      <p><strong>Teléfono:</strong> 300 000 0000</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 - Donaciones Solidarias</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

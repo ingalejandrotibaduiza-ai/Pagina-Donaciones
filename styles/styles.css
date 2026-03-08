@@ -1,141 +1,376 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
 body{
-font-family: Arial, sans-serif;
-margin:0;
-background:#f5f5f5;
-color:#222;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #f4f7f4, #edf3ee);
+  color: #2b2b2b;
+  line-height: 1.5;
 }
 
-header{
-background:#b2b8b2;
-color:white;
-padding:20px;
-text-align:center;
+/* HERO */
+.hero{
+  background: linear-gradient(135deg, rgba(42, 96, 65, 0.92), rgba(88, 150, 112, 0.88)),
+              url("imagen1.jpg") center/cover no-repeat;
+  color: white;
+  padding: 30px 20px;
 }
 
+.hero-contenido{
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.logo{
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.85);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.20);
+}
+
+.hero-texto{
+  max-width: 520px;
+}
+
+.hero h1{
+  font-size: 1.9rem;
+  margin-bottom: 8px;
+}
+
+.hero p{
+  max-width: 500px;
+  margin: 0 auto 10px;
+  font-size: 0.95rem;
+}
+
+.btn-hero{
+  display: inline-block;
+  text-decoration: none;
+  background: white;
+  color: #2f6b49;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-hero:hover{
+  transform: translateY(-2px);
+  background: #eaf6ee;
+}
+
+/* NAV */
 nav{
-background:#333;
-padding:10px;
-text-align:center;
+  background: #1f3d2d;
+  padding: 10px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav a{
-color:white;
-text-decoration:none;
-margin:0 10px;
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: 0.3s;
 }
 
 nav a:hover{
-text-decoration:underline;
+  color: #bde7c9;
 }
 
-main{
-padding:20px;
-max-width:850px;
-margin:auto;
+/* CONTENEDOR */
+.contenedor{
+  max-width: 1250px;
+  margin: 16px auto;
+  padding: 0 12px;
+  display: grid;
+  gap: 12px;
 }
 
-section{
-background:white;
-padding:15px;
-margin-bottom:15px;
-border-radius:8px;
-box-shadow:0 2px 6px rgba(0,0,0,0.08);
+.card{
+  background: rgba(255,255,255,0.96);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.07);
+  border: 1px solid rgba(0,0,0,0.04);
 }
 
-button{
-background:#212221;
-color:white;
-border:none;
-padding:10px 14px;
-border-radius:6px;
-cursor:pointer;
+.card h2{
+  color: #2f6b49;
+  margin-bottom: 8px;
+  font-size: 1.5rem;
 }
 
-button:hover{
-background:#3e8e41;
+.card h3{
+  margin: 10px 0 6px;
+  color: #3c4d42;
+  font-size: 1.05rem;
 }
 
-footer{
-background:#222;
-color:white;
-text-align:center;
-padding:15px;
-}
-
-.h7{
-font-size:12px;
-color:#666;
+.card p,
+.card li,
+.card dd,
+.card dt{
+  font-size: 0.95rem;
 }
 
 /* TEMA 11 FLOAT */
-
 .float-img{
-float:left;
-margin-right:20px;
+  float: left;
+  margin-right: 18px;
+}
+
+.float-img img{
+  border-radius: 14px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
 
 .float-section{
-overflow:auto;
+  overflow: auto;
 }
 
-/* TEMA 12 CENTRAR CONTENIDO */
-
+/* TEMA 12 */
 .centrado{
-text-align:center;
+  text-align: center;
 }
 
 /* TEMA 13 FLEXBOX */
-
 .flex-contenedor{
-display:flex;
-gap:10px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
 }
 
 .flex-item{
-background:#e5e5e5;
-padding:20px;
-flex:1;
-text-align:center;
+  flex: 1;
+  min-width: 180px;
+  background: linear-gradient(135deg, #e9f7ee, #d9efe1);
+  padding: 16px;
+  text-align: center;
+  border-radius: 12px;
+  font-weight: bold;
+  color: #2f6b49;
+  box-shadow: inset 0 0 0 1px rgba(47,107,73,0.08);
+}
+
+/* GRID DOBLE */
+.doble-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
 /* TEMA 14 POSITION */
-
 .position-box{
-position:relative;
+  position: relative;
 }
 
 .etiqueta{
-position:absolute;
-top:-10px;
-right:-10px;
-background:red;
-color:white;
-padding:5px 10px;
-border-radius:5px;
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  background: #e94b5f;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  box-shadow: 0 5px 12px rgba(233,75,95,0.3);
 }
 
 /* TEMA 15 TRANSFORM */
+.zoom{
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
 
 .zoom:hover{
-transform:scale(1.2);
+  transform: scale(1.08);
+}
+
+/* TEMA 16 FORM */
+.formulario{
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 12px;
+  align-items: end;
+  margin-top: 8px;
+}
+
+.formulario label{
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #3d4d42;
+}
+
+.formulario input{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cfd8d2;
+  border-radius: 10px;
+  outline: none;
+}
+
+.formulario input:focus{
+  border-color: #5a9b74;
+  box-shadow: 0 0 0 3px rgba(90,155,116,0.15);
+}
+
+button{
+  background: linear-gradient(135deg, #2f6b49, #4f9b6d);
+  color: white;
+  border: none;
+  padding: 11px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(47,107,73,0.2);
+}
+
+.boton-form{
+  display: flex;
+  align-items: end;
+}
+
+ul{
+  padding-left: 18px;
+  margin-top: 8px;
+}
+
+dl{
+  margin-top: 8px;
+}
+
+dt{
+  margin-top: 8px;
+}
+
+dd{
+  margin-left: 18px;
+}
+
+.mensaje-final{
+  margin-top: 12px;
+  color: #5d6c62;
+  font-style: italic;
+}
+
+/* TEMA 17 IFRAME */
+iframe{
+  display: block;
 }
 
 /* TEMA 18 TRANSITION */
-
 .hover-box{
-background:#eee;
-padding:20px;
-transition:all 0.5s;
+  background: linear-gradient(135deg, #eef4ef, #dcecdf);
+  padding: 16px;
+  border-radius: 14px;
+  text-align: center;
+  transition: all 0.5s ease;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hover-box:hover{
-background:#4caf50;
-color:white;
+  background: linear-gradient(135deg, #4f9b6d, #2f6b49);
+  color: white;
+  transform: scale(1.03);
 }
 
 /* TEMA 19 COLUMNAS */
-
 .columnas{
-column-count:2;
-column-gap:20px;
+  column-count: 2;
+  column-gap: 25px;
+}
+
+/* MULTIMEDIA */
+.media-redonda{
+  border-radius: 12px;
+}
+
+video{
+  max-height: 220px;
+  object-fit: cover;
+}
+
+.audio-estilo{
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* CONTACTO */
+.contacto{
+  text-align: center;
+}
+
+/* FOOTER */
+footer{
+  background: #1f3d2d;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  margin-top: 18px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px){
+  .doble-grid,
+  .formulario{
+    grid-template-columns: 1fr;
+  }
+
+  .float-img{
+    float: none;
+    margin: 0 0 12px 0;
+    text-align: center;
+  }
+
+  .columnas{
+    column-count: 1;
+  }
+
+  .hero{
+    padding: 24px 15px;
+  }
+
+  .hero h1{
+    font-size: 1.6rem;
+  }
+
+  .logo{
+    width: 80px;
+    height: 80px;
+  }
+
+  nav a{
+    display: inline-block;
+    margin: 4px 8px;
+  }
 }
