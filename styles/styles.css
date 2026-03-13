@@ -10,15 +10,35 @@ html{
 
 body{
   font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #f4f7f4, #edf3ee);
+  margin: 0;
   color: #2b2b2b;
   line-height: 1.5;
+
+  background:
+    linear-gradient(rgba(244, 247, 244, 0.55), rgba(237, 243, 238, 0.55)),
+    url("../Images/fondo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+section{
+  background: rgba(255,255,255,0.9);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+main{
+  max-width: 900px;
+  margin: auto;
 }
 
 /* HERO */
 .hero{
   background: linear-gradient(135deg, rgba(42, 96, 65, 0.92), rgba(88, 150, 112, 0.88)),
-              url("imagen1.jpg") center/cover no-repeat;
+              url("../Images/imagen1.jpg") center/cover no-repeat;
   color: white;
   padding: 30px 20px;
 }
@@ -72,6 +92,23 @@ body{
 .btn-hero:hover{
   transform: translateY(-2px);
   background: #eaf6ee;
+}
+
+input, select, textarea{
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+form{
+  margin-top: 15px;
+}
+
+label{
+  font-weight: bold;
 }
 
 /* NAV */

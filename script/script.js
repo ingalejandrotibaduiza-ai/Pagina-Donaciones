@@ -1,18 +1,25 @@
-document.getElementById("form-donacion").addEventListener("submit", function(e){
-  e.preventDefault();
+document.getElementById("form-donacion").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-  const monto = document.getElementById("monto").value;
-  const nombre = document.getElementById("nombre").value;
+    const nombre = document.getElementById("nombre").value;
+    const correo = document.getElementById("correo").value;
+    const monto = document.getElementById("monto").value;
+    const terminos = document.getElementById("terminos").checked;
 
-  if(!monto || monto <= 0){
-    alert("Por favor ingresa un monto válido.");
-    return;
-  }
+    if (nombre === "" || correo === "" || monto === "") {
+        alert("Por favor completa los campos obligatorios.");
+        return;
+    }
 
-  if(!nombre.trim()){
-    alert("Por favor ingresa tu nombre.");
-    return;
-  }
+    if (monto <= 0) {
+        alert("Por favor ingresa un monto válido.");
+        return;
+    }
 
-  alert("¡Gracias por tu donación, " + nombre + "! (Demo)");
+    if (!terminos) {
+        alert("Debes aceptar los términos y condiciones.");
+        return;
+    }
+
+    alert("¡Gracias por tu donación!");
 });
