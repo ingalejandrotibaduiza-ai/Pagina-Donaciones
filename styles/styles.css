@@ -410,4 +410,98 @@ footer{
     display: inline-block;
     margin: 4px 8px;
   }
+  /* =========================
+TEMA 22: TRANSPARENCIA Y DEGRADADOS
+========================= */
+
+.card {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+}
+
+.hero {
+  background: linear-gradient(135deg, rgba(42,96,65,0.95), rgba(88,150,112,0.85));
+}
+
+/* =========================
+TEMA 23: ANIMACIONES
+========================= */
+
+.animar {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: aparecer 1s ease forwards;
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+button {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+TEMA 24: SVG
+========================= */
+
+.svg-decoracion {
+  width: 100%;
+  height: 100px;
+}
+
+/* =========================
+TEMA 25: CANVAS
+========================= */
+
+#canvasDonacion {
+  border: 2px dashed #2f6b49;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  background: #f9f9f9;
+}
+
+/* =========================
+TEMA 27: EDITABLE
+========================= */
+
+.editable {
+  border: 2px dashed #aaa;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: text;
+}
+
+/* =========================
+TEMA 26: RESPONSIVE MEJORADO
+========================= */
+
+@media (max-width: 768px){
+  .doble-grid{
+    grid-template-columns: 1fr;
+  }
+
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+}
+.animar{
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.animar.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
 }

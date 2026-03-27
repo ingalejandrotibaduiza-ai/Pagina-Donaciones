@@ -2,13 +2,18 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+
+  <!-- TEMA 26: RESPONSIVE -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Donaciones Solidarias</title>
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="icon" href="favicon.png">
 </head>
+
 <body>
 
+  <!-- HEADER -->
   <header id="inicio" class="hero">
     <div class="hero-contenido">
       <img src="Images/imagen1.jpg" alt="Imagen de ayuda solidaria" class="logo">
@@ -23,6 +28,49 @@
     </div>
   </header>
 
+  <!-- TEMA 24: SVG -->
+  <section class="card animar" style="text-align:center;">
+
+  <h2>Gráfico SVG</h2>
+
+  <svg width="200" height="200" viewBox="0 0 200 200">
+
+    <!-- Círculo base -->
+    <circle cx="100" cy="100" r="70"
+      fill="none"
+      stroke="#e0e0e0"
+      stroke-width="15"/>
+
+    <!-- Progreso -->
+    <circle cx="100" cy="100" r="70"
+      fill="none"
+      stroke="#2f6b49"
+      stroke-width="15"
+      stroke-dasharray="440"
+      stroke-dashoffset="110"
+      transform="rotate(-90 100 100)"/>
+
+    <!-- Texto central -->
+    <text x="100" y="105"
+      text-anchor="middle"
+      font-size="20"
+      fill="#2f6b49"
+      font-weight="bold">
+      75%
+    </text>
+
+    <!-- Texto abajo -->
+    <text x="100" y="140"
+      text-anchor="middle"
+      font-size="14"
+      fill="#555">
+      Apoyo
+    </text>
+
+  </svg>
+
+</section>
+
   <nav>
     <a href="#inicio">Inicio</a>
     <a href="#causa">Causa</a>
@@ -34,33 +82,30 @@
   <main class="contenedor">
 
     <!-- TEMA 11: FLOAT -->
-    <section class="card float-section">
+    <section class="card float-section animar">
+      <div class="float-img">
+        <img src="Images/imagen1.jpg" width="220">
+      </div>
 
-  <div class="float-img">
-  <img src="Images/imagen1.jpg" width="220" alt="Niño necesitado">
-  </div>
+      <h2>Apoya nuestra causa</h2>
 
-  <h2>Apoya nuestra causa</h2>
+      <p>
+        Cada donación contribuye a llevar alimentos, educación y apoyo social.
+      </p>
 
-  <p>
-  Cada donación contribuye a llevar alimentos, educación y apoyo social
-  a comunidades vulnerables.
-  </p>
-
-  <p>
-  Muchos niños viven en condiciones difíciles y necesitan apoyo
-  para tener acceso a educación, salud y alimentación.
-  </p>
-
-  </section>
-    <!-- TEMA 12: CENTRAR CONTENIDO -->
-    <section class="card centrado">
-      <h2>Un pequeño aporte puede hacer una gran diferencia</h2>
-      <p>Trabajamos con amor, transparencia y compromiso social.</p>
+      <p>
+        Muchos niños viven en condiciones difíciles.
+      </p>
     </section>
 
-    <!-- TEMA 13: FLEXBOX -->
-    <section class="card">
+    <!-- TEMA 12 -->
+    <section class="card centrado animar">
+      <h2>Un pequeño aporte puede hacer una gran diferencia</h2>
+      <p>Trabajamos con amor y compromiso social.</p>
+    </section>
+
+    <!-- TEMA 13 FLEXBOX -->
+    <section class="card animar">
       <h2>Nuestras áreas de apoyo</h2>
       <div class="flex-contenedor">
         <div class="flex-item">📘 Educación</div>
@@ -69,162 +114,152 @@
       </div>
     </section>
 
+    <!-- GRID -->
     <section class="doble-grid">
-      <!-- TEMA 14: POSITION -->
-      <section class="card position-box">
+
+      <!-- TEMA 14 -->
+      <section class="card position-box animar">
         <div class="etiqueta">Campaña activa</div>
-        <h2>Ayuda especial del mes</h2> 
-        <p>
-          Este mes estamos reuniendo fondos para apoyar familias
-          en situación de emergencia.
-        </p>
+        <h2>Ayuda especial del mes</h2>
+        <p>Apoyo a familias vulnerables.</p>
       </section>
 
-      <!-- TEMA 15: TRANSFORM -->
-      <section class="card transform-box centrado">
+      <!-- TEMA 15 -->
+      <section class="card centrado animar">
         <h2 class="zoom">Tu donación cambia vidas ✨</h2>
-        <p>Haz parte de esta red de ayuda y esperanza.</p>
       </section>
+
     </section>
 
+    <!-- FORM + INFO -->
     <section class="doble-grid">
-      <!-- TEMA 16: FORMULARIO -->
-      <section id="donar" class="card">
+
+      <!-- TEMA 16 -->
+      <section id="donar" class="card animar">
         <h2>Haz tu donación</h2>
+
         <form id="form-donacion">
-    <label for="nombre">Nombre:</label><br>
-    <input type="text" id="nombre" placeholder="Tu nombre"><br><br>
 
-    <label for="apellido">Apellido:</label><br>
-    <input type="text" id="apellido" placeholder="Tu apellido"><br><br>
+          <label>Nombre:</label>
+          <input type="text" id="nombre"><br><br>
 
-    <label for="correo">Correo electrónico:</label><br>
-    <input type="email" id="correo" placeholder="ejemplo@correo.com"><br><br>
+          <label>Apellido:</label>
+          <input type="text" id="apellido"><br><br>
 
-    <label for="telefono">Teléfono:</label><br>
-    <input type="tel" id="telefono" placeholder="3001234567"><br><br>
+          <label>Correo:</label>
+          <input type="email" id="correo"><br><br>
 
-    <label for="ciudad">Ciudad:</label><br>
-    <input type="text" id="ciudad" placeholder="Tu ciudad"><br><br>
+          <label>Monto:</label>
+          <input type="number" id="monto"><br><br>
 
-    <label for="tipo-donacion">Tipo de donación:</label><br>
-    <select id="tipo-donacion">
-        <option value="">Seleccione una opción</option>
-        <option value="dinero">Dinero</option>
-        <option value="ropa">Ropa</option>
-        <option value="alimentos">Alimentos</option>
-        <option value="utiles">Útiles escolares</option>
-    </select><br><br>
+          <label>Método:</label>
+          <input type="radio" name="metodo" value="nequi"> Nequi
+          <input type="radio" name="metodo" value="daviplata"> Daviplata<br><br>
 
-    <label for="monto">Monto de donación:</label><br>
-    <input type="number" id="monto" placeholder="Ej: 5000"><br><br>
+          <input type="checkbox" id="terminos"> Acepto términos<br><br>
 
-    <label for="metodo">Método de pago:</label><br>
-    <input type="radio" name="metodo" value="nequi"> Nequi<br>
-    <input type="radio" name="metodo" value="daviplata"> Daviplata<br>
-    <input type="radio" name="metodo" value="transferencia"> Transferencia<br><br>
+          <button>Donar</button>
 
-    <label for="mensaje">Mensaje:</label><br>
-    <textarea id="mensaje" rows="4" cols="30" placeholder="Escribe un mensaje de apoyo"></textarea><br><br>
+        </form>
+        <p id="mensaje-guardado" style="color:green; font-weight:bold;"></p>
 
-    <input type="checkbox" id="terminos">
-    <label for="terminos">Acepto los términos y condiciones</label><br><br>
+        <!-- TEMA 25: CANVAS -->
+        <h3>Dibuja tu apoyo ❤️</h3>
+        <canvas id="canvasDonacion" width="300" height="150"></canvas>
+        <p style="margin-top:10px;">
+  Este espacio usa canvas para dibujar con el mouse 🎨
+</p>
 
-    <button type="submit">Donar</button>
-</form>
       </section>
 
-      <section class="card">
+      <!-- INFO -->
+      <section class="card animar">
+
         <h2>¿Para qué es la donación?</h2>
+
         <p>
-          Tus aportes se destinan a proyectos de
-          <em>alimentación, educación y bienestar comunitario</em>.
+          Tus aportes ayudan a niños y familias vulnerables.
         </p>
 
-        <h3>Apoyos que realizamos</h3>
-        <ul>
-          <li>Entrega de mercados</li>
-          <li>Útiles escolares</li>
-          <li>Actividades comunitarias</li>
-          <li>Ayudas en emergencias</li>
-        </ul>
+        <!-- IMAGEN -->
+        <div style="text-align:center;">
+          <img src="Images/imagen2.jpg" style="width:100%; max-width:280px;">
+        </div>
+
+        <!-- TEMA 27 -->
+        <h3>Mensaje editable</h3>
+        <p contenteditable="true" style="border:1px dashed gray; padding:10px;">
+          Escribe un mensaje motivador ❤️
+        </p>
+
       </section>
     </section>
 
-    <section class="card">
-      <h2>Transparencia</h2>
-      <dl>
-        <dt><strong>Donación:</strong></dt>
-        <dd>Aporte voluntario para una causa social.</dd>
+    <!-- TEMA 22 -->
+    <section class="card animar" style="
+background: linear-gradient(135deg, rgba(47,107,73,0.8), rgba(88,150,112,0.6));
+color:white;">
+  <h2>Transparencia y degradado</h2>
+  <p>Uso de colores con transparencia y fondos degradados para mejorar el diseño visual.</p>
+</section>
+    <!-- TEMA 23 -->
+<section class="card animar">
+  <h2>Animaciones</h2>
+  <p class="animar">
+    Este texto aparece con animación al hacer scroll 👀
+  </p>
+</section>
 
-        <dt><strong>Compromiso:</strong></dt>
-        <dd>Trabajo responsable y cercano con la comunidad.</dd>
-
-        <dt><strong>Transparencia:</strong></dt>
-        <dd>Uso claro y responsable de los recursos.</dd>
-      </dl>
-
-      <p class="mensaje-final">Gracias por apoyar nuestra misión 💚</p>
+    <!-- TEMA 17 -->
+    <section class="card animar">
+      <h2>Ubicación</h2>
+      <iframe src="https://www.google.com/maps?q=Bogota&output=embed"
+      width="100%" height="180"></iframe>
     </section>
 
-    <section class="doble-grid">
-      <!-- TEMA 17: IFRAME -->
-      <section class="card">
-        <h2>Ubicación</h2>
-        <iframe
-          src="https://www.google.com/maps?q=Bogota&output=embed"
-          width="100%"
-          height="180"
-          style="border:0; border-radius:12px;"
-          allowfullscreen=""
-          loading="lazy">
-        </iframe>
-      </section>
-
-      <!-- TEMA 18: TRANSITION -->
-      <section class="card">
-        <h2 class="hover-box">Pasa el mouse aquí 💫</h2>
-      </section>
+    <!-- TEMA 18 -->
+    <section class="card animar">
+      <h2 class="hover-box">Pasa el mouse aquí 💫</h2>
     </section>
 
-    <!-- TEMA 19: COLUMNAS -->
-    <section class="card">
+    <!-- TEMA 19 COLUMNAS  -->
+    <section class="card animar">
       <h2>Nuestra misión</h2>
       <div class="columnas">
         <p>
           Nuestro objetivo es mejorar la calidad de vida de las personas
           que más lo necesitan. Gracias a la solidaridad de muchas personas,
           podemos desarrollar acciones de apoyo social enfocadas en educación,
-          alimentación, bienestar comunitario y acompañamiento humano.
+          alimentación y bienestar comunitario.
         </p>
       </div>
     </section>
 
+    <!-- MULTIMEDIA -->
     <section class="doble-grid" id="multimedia">
-      <!-- TEMA 20: VIDEO -->
-      <section class="card">
-        <h2>Video de agradecimiento</h2>
-        <video controls width="100%" class="media-redonda">
-          <source src="video.mp4" type="video/mp4">
-          Tu navegador no soporta video.
+
+      <!-- TEMA 20 -->
+      <section class="card animar">
+        <h2>Video</h2>
+        <video controls width="100%">
+          <source src="video.mp4">
         </video>
       </section>
 
-      <!-- TEMA 21: AUDIO -->
-      <section class="card">
-        <h2>Mensaje de agradecimiento</h2>
-        <p>Escucha un mensaje especial para nuestros donantes.</p>
-        <audio controls class="audio-estilo">
-          <source src="audio.mp3" type="audio/mpeg">
-          Tu navegador no soporta audio.
+      <!-- TEMA 21 -->
+      <section class="card animar">
+        <h2>Audio</h2>
+        <audio controls>
+          <source src="audio.mp3">
         </audio>
       </section>
+
     </section>
 
-    <section id="contacto" class="card contacto">
+    <!-- CONTACTO -->
+    <section id="contacto" class="card centrado animar">
       <h2>Contacto</h2>
-      <p><strong>Correo:</strong> contacto@donaciones.com</p>
-      <p><strong>Teléfono:</strong> 300 000 0000</p>
+      <p>contacto@donaciones.com</p>
     </section>
 
   </main>
@@ -233,6 +268,8 @@
     <p>&copy; 2026 - Donaciones Solidarias</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- TEMA 28 -->
+  <script src="script/script.js"></script>
+
 </body>
 </html>
