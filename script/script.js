@@ -1,41 +1,41 @@
 // ==============================
 // FORMULARIO
 // ==============================
-document.getElementById("form-donacion").addEventListener("submit", function(e) {
-    e.preventDefault();
+document.getElementById("form").addEventListener("submit", function(e){
 
     const nombre = document.getElementById("nombre").value;
     const correo = document.getElementById("correo").value;
     const monto = document.getElementById("monto").value;
     const terminos = document.getElementById("terminos").checked;
 
-    if (nombre === "" || correo === "" || monto === "") {
-        alert("Por favor completa los campos obligatorios.");
+    // VALIDACIONES
+    if(nombre === "" || correo === "" || monto === ""){
+        alert("Por favor completa los campos obligatorios");
+        e.preventDefault();
         return;
     }
 
-    if (monto <= 0) {
-        alert("Monto inválido.");
+    if(monto <= 0){
+        alert("Ingresa un monto válido");
+        e.preventDefault();
         return;
     }
 
-    if (!terminos) {
-        alert("Debes aceptar los términos.");
+    if(!terminos){
+        alert("Debes aceptar los términos");
+        e.preventDefault();
         return;
     }
 
-    // TEMA 28 STORAGE (MEJORADO)
+    // GUARDAR EN LOCAL STORAGE (TEMA 28)
     localStorage.setItem("nombre", nombre);
     localStorage.setItem("correo", correo);
     localStorage.setItem("monto", monto);
 
-    // Mensaje visual (extra)
-    if(document.getElementById("mensaje-guardado")){
-        document.getElementById("mensaje-guardado").innerText =
-        "Datos guardados correctamente ✔";
-    }
+    // MENSAJE VISUAL
+    document.getElementById("mensaje-guardado").innerText =
+    "Datos guardados correctamente ✔";
 
-    alert("¡Gracias por tu donación!");
 });
 
 

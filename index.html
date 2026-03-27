@@ -131,37 +131,46 @@
 
     </section>
 
-    <!-- FORM + INFO -->
-    <section class="doble-grid">
+   <section class="doble-grid">
 
-      <!-- TEMA 16 -->
-      <section id="donar" class="card animar">
-        <h2>Haz tu donación</h2>
+  <section id="donar" class="card animar">
+    <h2>Haz tu donación</h2>
 
-        <form id="form-donacion">
+    <form id="form" action="https://formsubmit.co/alejandro.tibaduiza2005@gmail.com" method="POST">
 
-          <label>Nombre:</label>
-          <input type="text" id="nombre"><br><br>
+      <input type="text" name="nombre" id="nombre" placeholder="Nombre completo" required>
 
-          <label>Apellido:</label>
-          <input type="text" id="apellido"><br><br>
+      <input type="email" name="correo" id="correo" placeholder="Correo electrónico" required>
 
-          <label>Correo:</label>
-          <input type="email" id="correo"><br><br>
+      <input type="tel" name="telefono" placeholder="Teléfono">
 
-          <label>Monto:</label>
-          <input type="number" id="monto"><br><br>
+      <select name="tipo">
+        <option>Tipo de donación</option>
+        <option>Dinero</option>
+        <option>Alimentos</option>
+        <option>Ropa</option>
+      </select>
 
-          <label>Método:</label>
-          <input type="radio" name="metodo" value="nequi"> Nequi
-          <input type="radio" name="metodo" value="daviplata"> Daviplata<br><br>
+      <input type="number" name="monto" id="monto" placeholder="Monto" required>
 
-          <input type="checkbox" id="terminos"> Acepto términos<br><br>
+      <textarea name="mensaje" placeholder="Mensaje"></textarea>
 
-          <button>Donar</button>
+      <label>
+        <input type="checkbox" id="terminos" required> Acepto términos
+      </label>
 
-        </form>
-        <p id="mensaje-guardado" style="color:green; font-weight:bold;"></p>
+      <button type="submit">Donar</button>
+
+      <!-- CONFIG FORM SUBMIT -->
+      <input type="hidden" name="_captcha" value="false">
+
+    </form>
+
+    <p id="mensaje-guardado"></p>
+
+  </section>
+
+</section>
 
         <!-- TEMA 25: CANVAS -->
         <h3>Dibuja tu apoyo ❤️</h3>
