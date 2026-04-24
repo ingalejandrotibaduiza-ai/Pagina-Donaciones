@@ -1,111 +1,216 @@
 // ==============================
-// FORMULARIO
+// DATOS INICIALES
 // ==============================
-document.getElementById("form").addEventListener("submit", function(e){
+let donaciones = JSON.parse(localStorage.getItem("donaciones")) || [
+  {
+    nombre: "Ana Pérez",
+    tipo: "Alimentos",
+    monto: 30000
+  },
+  {
+    nombre: "Carlos Ruiz",
+    tipo: "Dinero",
+    monto: 80000
+  }
+];
 
-    const nombre = document.getElementById("nombre").value;
-    const correo = document.getElementById("correo").value;
-    const monto = document.getElementById("monto").value;
+
+// ==============================
+// TEMA 23: ANIMACIONES
+// ==============================
+function mostrarAnimaciones(){
+  const elementos = document.querySelectorAll(".animar");
+
+  elementos.forEach(function(elemento){
+    const posicion = elemento.getBoundingClientRect().top;
+    const altoPantalla = window.innerHeight;
+
+    if(posicion < altoPantalla - 80){
+      elemento.classList.add("visible");
+    }
+  });
+}
+
+window.addEventListener("scroll", mostrarAnimaciones);
+window.addEventListener("load", mostrarAnimaciones);
+mostrarAnimaciones();
+
+
+// ==============================
+// TEMA 16 Y 28: FORMULARIO + LOCALSTORAGE
+// ==============================
+const formDonacion = document.getElementById("form-donacion");
+
+if(formDonacion){
+  formDonacion.addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const nombre = document.getElementById("nombre").value.trim();
+    const correo = document.getElementById("correo").value.trim();
+    const telefono = document.getElementById("telefono").value.trim();
+    const ciudad = document.getElementById("ciudad").value.trim();
+    const tipo = document.getElementById("tipo").value;
+    const monto = Number(document.getElementById("monto").value);
+    const mensaje = document.getElementById("mensaje").value.trim();
     const terminos = document.getElementById("terminos").checked;
 
-    // VALIDACIONES
-    if(nombre === "" || correo === "" || monto === ""){
-        alert("Por favor completa los campos obligatorios");
-        e.preventDefault();
-        return;
-    }
-
-    if(monto <= 0){
-        alert("Ingresa un monto válido");
-        e.preventDefault();
-        return;
+    if(nombre === "" || correo === "" || telefono === "" || ciudad === "" || tipo === "" || monto <= 0){
+      alert("Por favor completa todos los campos obligatorios.");
+      return;
     }
 
     if(!terminos){
-        alert("Debes aceptar los términos");
-        e.preventDefault();
-        return;
+      alert("Debes aceptar el uso de la información.");
+      return;
     }
 
-    // GUARDAR EN LOCAL STORAGE (TEMA 28)
-    localStorage.setItem("nombre", nombre);
-    localStorage.setItem("correo", correo);
-    localStorage.setItem("monto", monto);
+    const nuevaDonacion = {
+      nombre: nombre,
+      correo: correo,
+      telefono: telefono,
+      ciudad: ciudad,
+      tipo: tipo,
+      monto: monto,
+      mensaje: mensaje
+    };
 
-    // MENSAJE VISUAL
+    donaciones.push(nuevaDonacion);
+    localStorage.setItem("donaciones", JSON.stringify(donaciones));
+
     document.getElementById("mensaje-guardado").innerText =
-    "Datos guardados correctamente ✔";
+      "Donación registrada correctamente. ¡Gracias por tu apoyo!";
 
-});
+    formDonacion.reset();
+    renderizarDonaciones();
+  });
+}
 
 
 // ==============================
-// TEMA 23: ANIMACIONES SCROLL
+// RENDERIZAR PANEL DE DONACIONES
 // ==============================
+function renderizarDonaciones(){
+  const tabla = document.getElementById("tabla-donaciones");
+  const totalDonaciones = document.getElementById("total-donaciones");
+  const totalRecaudado = document.getElementById("total-recaudado");
 
-// 👇 dejamos tu evento pero usamos función
-window.addEventListener("scroll", mostrarAnimaciones);
-window.addEventListener("load", mostrarAnimaciones);
+  if(!tabla) return;
 
-function mostrarAnimaciones(){
+  tabla.innerHTML = "";
 
-    let elementos = document.querySelectorAll(".animar");
+  let suma = 0;
 
-    elementos.forEach(function(el){
+  donaciones.forEach(function(donacion){
+    suma += Number(donacion.monto);
 
-        let posicion = el.getBoundingClientRect().top;
-        let pantalla = window.innerHeight;
+    const fila = document.createElement("tr");
 
-        if(posicion < pantalla - 80){
-            el.classList.add("visible");
-        }
+    fila.innerHTML = `
+      <td>${donacion.nombre}</td>
+      <td>${donacion.tipo}</td>
+      <td><span class="tag entregado">$${Number(donacion.monto).toLocaleString("es-CO")}</span></td>
+    `;
 
+    tabla.appendChild(fila);
+  });
+
+  totalDonaciones.textContent = donaciones.length;
+  totalRecaudado.textContent = "$" + suma.toLocaleString("es-CO");
+}
+
+renderizarDonaciones();
+
+
+// ==============================
+// BUSCAR DONACIÓN
+// ==============================
+const btnBuscar = document.getElementById("btn-buscar");
+
+if(btnBuscar){
+  btnBuscar.addEventListener("click", function(){
+    const nombreBuscar = document.getElementById("donante-buscar").value.trim().toLowerCase();
+    const resultado = document.getElementById("resultado-busqueda");
+
+    const donacion = donaciones.find(function(item){
+      return item.nombre.toLowerCase().includes(nombreBuscar);
     });
+
+    if(!donacion){
+      resultado.innerHTML = "No se encontró ninguna donación con ese nombre.";
+      return;
+    }
+
+    resultado.innerHTML = `
+      <strong>Donante:</strong> ${donacion.nombre}<br>
+      <strong>Tipo de donación:</strong> ${donacion.tipo}<br>
+      <strong>Monto aproximado:</strong> $${Number(donacion.monto).toLocaleString("es-CO")}<br>
+      <strong>Mensaje:</strong> ${donacion.mensaje || "Sin mensaje registrado."}
+    `;
+  });
 }
 
 
 // ==============================
 // TEMA 25: CANVAS
 // ==============================
-const canvas = document.getElementById("canvasDonacion");
+const canvas = document.getElementById("canvas-flujo");
 
 if(canvas){
-    const ctx = canvas.getContext("2d");
-    let dibujando = false;
+  const ctx = canvas.getContext("2d");
+  let dibujando = false;
 
-    canvas.addEventListener("mousedown", () => dibujando = true);
-    canvas.addEventListener("mouseup", () => dibujando = false);
+  canvas.addEventListener("mousedown", function(){
+    dibujando = true;
+  });
 
-    canvas.addEventListener("mousemove", function(e){
-        if(!dibujando) return;
+  canvas.addEventListener("mouseup", function(){
+    dibujando = false;
+    ctx.beginPath();
+  });
 
-        ctx.fillStyle = "#2f6b49";
-        ctx.beginPath();
-        ctx.arc(e.offsetX, e.offsetY, 3, 0, Math.PI * 2);
-        ctx.fill();
+  canvas.addEventListener("mousemove", function(e){
+    if(!dibujando) return;
+
+    const rect = canvas.getBoundingClientRect();
+
+    ctx.lineWidth = 3;
+    ctx.lineCap = "round";
+    ctx.strokeStyle = "#007a87";
+
+    ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(e.clientX - rect.left, e.clientY - rect.top);
+  });
+
+  const limpiar = document.getElementById("limpiar-canvas");
+
+  if(limpiar){
+    limpiar.addEventListener("click", function(){
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
     });
+  }
 }
 
 
 // ==============================
-// CARGAR DATOS (MEJORADO)
+// TEMA 27 Y 28: CONTENIDO EDITABLE + LOCALSTORAGE
 // ==============================
-window.addEventListener("load", function(){
+const notas = document.getElementById("notas-equipo");
+const btnNotas = document.getElementById("guardar-notas");
 
-    const nombreGuardado = localStorage.getItem("nombre");
-    const correoGuardado = localStorage.getItem("correo");
-    const montoGuardado = localStorage.getItem("monto");
+if(notas){
+  const notasGuardadas = localStorage.getItem("mensajeCampaña");
 
-    if(nombreGuardado){
-        document.getElementById("nombre").value = nombreGuardado;
-    }
+  if(notasGuardadas){
+    notas.innerText = notasGuardadas;
+  }
+}
 
-    if(correoGuardado){
-        document.getElementById("correo").value = correoGuardado;
-    }
-
-    if(montoGuardado){
-        document.getElementById("monto").value = montoGuardado;
-    }
-
-});
+if(btnNotas){
+  btnNotas.addEventListener("click", function(){
+    localStorage.setItem("mensajeCampaña", notas.innerText);
+    alert("Mensaje guardado correctamente.");
+  });
+}

@@ -10,115 +10,130 @@ html{
 
 body{
   font-family: Arial, sans-serif;
-  margin: 0;
-  color: #2b2b2b;
-  line-height: 1.5;
-
+  color: #1f2933;
+  line-height: 1.6;
   background:
-    linear-gradient(rgba(244, 247, 244, 0.55), rgba(237, 243, 238, 0.55)),
+    linear-gradient(rgba(245, 248, 255, 0.78), rgba(238, 246, 255, 0.78)),
     url("../Images/fondo.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  background-repeat: no-repeat;
-}
-
-section{
-  background: rgba(255,255,255,0.9);
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-}
-
-main{
-  max-width: 900px;
-  margin: auto;
 }
 
 /* HERO */
 .hero{
-  background: linear-gradient(135deg, rgba(42, 96, 65, 0.92), rgba(88, 150, 112, 0.88)),
-              url("../Images/imagen1.jpg") center/cover no-repeat;
+  min-height: 430px;
+  background:
+    linear-gradient(135deg, rgba(11, 41, 71, 0.92), rgba(0, 122, 135, 0.82)),
+    url("../Images/fondo.jpg") center/cover no-repeat;
   color: white;
-  padding: 30px 20px;
+}
+
+.hero-capa{
+  min-height: 430px;
+  display: flex;
+  align-items: center;
 }
 
 .hero-contenido{
-  max-width: 1200px;
+  width: min(1150px, 92%);
   margin: auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 25px;
   align-items: center;
-  justify-content: center;
-  gap: 18px;
-  flex-wrap: wrap;
-  text-align: center;
 }
 
-.logo{
-  width: 90px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid rgba(255,255,255,0.85);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.20);
+.mini-titulo{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #b9f6ff;
+  margin-bottom: 10px;
 }
 
-.hero-texto{
-  max-width: 520px;
+.mini-titulo.oscuro{
+  color: #007a87;
 }
 
 .hero h1{
-  font-size: 1.9rem;
-  margin-bottom: 8px;
+  font-size: 3.4rem;
+  line-height: 1.1;
+  margin-bottom: 16px;
 }
 
 .hero p{
-  max-width: 500px;
-  margin: 0 auto 10px;
-  font-size: 0.95rem;
+  font-size: 1.08rem;
+  max-width: 680px;
+  margin-bottom: 20px;
 }
 
-.btn-hero{
+.botones-hero{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-principal,
+.btn-secundario{
   display: inline-block;
   text-decoration: none;
-  background: white;
-  color: #2f6b49;
-  padding: 8px 16px;
-  border-radius: 25px;
+  padding: 12px 20px;
+  border-radius: 30px;
   font-weight: bold;
   transition: 0.3s;
 }
 
-.btn-hero:hover{
-  transform: translateY(-2px);
-  background: #eaf6ee;
+.btn-principal{
+  background: #00d084;
+  color: #053b2f;
 }
 
-input, select, textarea{
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
+.btn-secundario{
+  border: 2px solid white;
+  color: white;
 }
 
-form{
-  margin-top: 15px;
+.btn-principal:hover,
+.btn-secundario:hover{
+  transform: translateY(-3px);
 }
 
-label{
+.hero-card{
+  background: rgba(255,255,255,0.14);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 24px;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+.estado-badge{
+  display: inline-block;
+  margin-top: 12px;
+  background: #00d084;
+  color: #053b2f;
+  padding: 7px 12px;
+  border-radius: 20px;
   font-weight: bold;
+}
+
+/* SVG */
+.svg-onda{
+  display: block;
+  margin-top: -70px;
 }
 
 /* NAV */
 nav{
-  background: #1f3d2d;
-  padding: 10px;
+  background: #06283d;
+  padding: 13px;
   text-align: center;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 20;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
 nav a{
@@ -126,382 +141,424 @@ nav a{
   text-decoration: none;
   margin: 0 12px;
   font-weight: bold;
-  font-size: 0.95rem;
   transition: 0.3s;
 }
 
 nav a:hover{
-  color: #bde7c9;
+  color: #00d084;
 }
 
 /* CONTENEDOR */
 .contenedor{
-  max-width: 1250px;
-  margin: 16px auto;
-  padding: 0 12px;
+  width: min(1150px, 94%);
+  margin: 25px auto;
   display: grid;
-  gap: 12px;
+  gap: 18px;
 }
 
+/* TEMA 22: TRANSPARENCIA Y DEGRADADOS */
 .card{
-  background: rgba(255,255,255,0.96);
-  border-radius: 16px;
-  padding: 16px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.07);
-  border: 1px solid rgba(0,0,0,0.04);
+  background: rgba(255,255,255,0.90);
+  backdrop-filter: blur(8px);
+  padding: 22px;
+  border-radius: 22px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+  border: 1px solid rgba(255,255,255,0.55);
 }
 
 .card h2{
-  color: #2f6b49;
-  margin-bottom: 8px;
-  font-size: 1.5rem;
+  color: #06283d;
+  margin-bottom: 10px;
+  font-size: 1.75rem;
 }
 
 .card h3{
-  margin: 10px 0 6px;
-  color: #3c4d42;
-  font-size: 1.05rem;
+  color: #0b7285;
+  margin: 14px 0 8px;
 }
 
-.card p,
-.card li,
-.card dd,
-.card dt{
-  font-size: 0.95rem;
+.texto-suave{
+  color: #52616b;
+  margin-bottom: 14px;
 }
 
-/* TEMA 11 FLOAT */
+/* TEMA 11: FLOAT */
 .float-img{
   float: left;
   margin-right: 18px;
 }
 
-.float-img img{
-  border-radius: 14px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+.icono-grande{
+  width: 95px;
+  height: 95px;
+  background: linear-gradient(135deg, #00d084, #00a6fb);
+  border-radius: 24px;
+  display: grid;
+  place-items: center;
+  font-size: 3rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
 }
 
 .float-section{
   overflow: auto;
 }
 
-/* TEMA 12 */
+/* TEMA 12: CENTRADO */
 .centrado{
   text-align: center;
 }
 
-/* TEMA 13 FLEXBOX */
+/* TEMA 13: FLEXBOX */
 .flex-contenedor{
   display: flex;
-  gap: 12px;
+  gap: 14px;
   flex-wrap: wrap;
-  margin-top: 8px;
+  margin-top: 15px;
 }
 
 .flex-item{
   flex: 1;
-  min-width: 180px;
-  background: linear-gradient(135deg, #e9f7ee, #d9efe1);
-  padding: 16px;
-  text-align: center;
-  border-radius: 12px;
-  font-weight: bold;
-  color: #2f6b49;
-  box-shadow: inset 0 0 0 1px rgba(47,107,73,0.08);
+  min-width: 220px;
+  background: linear-gradient(135deg, #e9fbf5, #e9f5ff);
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid #d8edf0;
+  transition: 0.3s;
 }
 
-/* GRID DOBLE */
+.flex-item:hover{
+  transform: translateY(-5px);
+}
+
+.flex-item span{
+  font-size: 2rem;
+}
+
+/* GRID */
 .doble-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 18px;
 }
 
-/* TEMA 14 POSITION */
+/* TEMA 14: POSITION */
 .position-box{
   position: relative;
 }
 
 .etiqueta{
   position: absolute;
-  top: -10px;
-  right: 15px;
-  background: #e94b5f;
+  top: -12px;
+  right: 18px;
+  background: #ff6b6b;
   color: white;
-  padding: 6px 10px;
+  padding: 7px 13px;
   border-radius: 20px;
-  font-size: 11px;
-  box-shadow: 0 5px 12px rgba(233,75,95,0.3);
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 
-/* TEMA 15 TRANSFORM */
+/* TEMA 15: TRANSFORM */
 .zoom{
   display: inline-block;
-  transition: transform 0.3s ease;
+  transition: 0.3s;
 }
 
 .zoom:hover{
-  transform: scale(1.08);
+  transform: scale(1.08) rotate(-1deg);
 }
 
-/* TEMA 16 FORM */
-.formulario{
-  display: grid;
-  grid-template-columns: 1fr 1fr auto;
-  gap: 12px;
-  align-items: end;
-  margin-top: 8px;
+/* FORMULARIO */
+form{
+  margin-top: 12px;
 }
 
-.formulario label{
+label{
   display: block;
-  margin-bottom: 6px;
   font-weight: bold;
-  color: #3d4d42;
+  margin-bottom: 5px;
+  color: #334e68;
 }
 
-.formulario input{
+input, select, textarea{
   width: 100%;
-  padding: 10px;
-  border: 1px solid #cfd8d2;
-  border-radius: 10px;
-  outline: none;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  margin-bottom: 13px;
+  font-size: 0.95rem;
 }
 
-.formulario input:focus{
-  border-color: #5a9b74;
-  box-shadow: 0 0 0 3px rgba(90,155,116,0.15);
+input:focus, select:focus, textarea:focus{
+  outline: none;
+  border-color: #00a6fb;
+  box-shadow: 0 0 0 3px rgba(0,166,251,0.15);
 }
 
 button{
-  background: linear-gradient(135deg, #2f6b49, #4f9b6d);
-  color: white;
+  background: linear-gradient(135deg, #00d084, #00a6fb);
+  color: #06283d;
   border: none;
-  padding: 11px 16px;
-  border-radius: 12px;
+  padding: 12px 18px;
+  border-radius: 14px;
   cursor: pointer;
   font-weight: bold;
   transition: 0.3s;
 }
 
 button:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 8px 15px rgba(47,107,73,0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.15);
 }
 
-.boton-form{
+.mensaje-exito{
+  margin-top: 10px;
+  color: #087f5b;
+  font-weight: bold;
+}
+
+/* DASHBOARD */
+.metricas{
   display: flex;
-  align-items: end;
+  gap: 10px;
+  margin: 15px 0;
 }
 
-ul{
-  padding-left: 18px;
-  margin-top: 8px;
-}
-
-dl{
-  margin-top: 8px;
-}
-
-dt{
-  margin-top: 8px;
-}
-
-dd{
-  margin-left: 18px;
-}
-
-.mensaje-final{
-  margin-top: 12px;
-  color: #5d6c62;
-  font-style: italic;
-}
-
-/* TEMA 17 IFRAME */
-iframe{
-  display: block;
-}
-
-/* TEMA 18 TRANSITION */
-.hover-box{
-  background: linear-gradient(135deg, #eef4ef, #dcecdf);
-  padding: 16px;
-  border-radius: 14px;
+.metricas div{
+  flex: 1;
+  background: #eef8ff;
+  border-radius: 15px;
+  padding: 14px;
   text-align: center;
-  transition: all 0.5s ease;
-  min-height: 180px;
+}
+
+.metricas strong{
+  display: block;
+  font-size: 1.6rem;
+  color: #007a87;
+}
+
+.metricas span{
+  font-size: 0.85rem;
+  color: #52616b;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td{
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.tag{
+  padding: 5px 9px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.ruta{
+  background: #fff3bf;
+  color: #7c5c00;
+}
+
+.bodega{
+  background: #d0ebff;
+  color: #084b83;
+}
+
+.entregado{
+  background: #d3f9d8;
+  color: #1b6b35;
+}
+
+.imagen-dashboard{
+  text-align: center;
+  margin-top: 16px;
+}
+
+.imagen-dashboard img{
+  width: 100%;
+  max-width: 290px;
+  border-radius: 18px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+}
+
+/* RASTREO */
+.rastreo-box{
   display: flex;
-  align-items: center;
-  justify-content: center;
+  gap: 10px;
+  margin: 12px 0;
 }
 
-.hover-box:hover{
-  background: linear-gradient(135deg, #4f9b6d, #2f6b49);
-  color: white;
-  transform: scale(1.03);
+.rastreo-box input{
+  margin-bottom: 0;
 }
 
-/* TEMA 19 COLUMNAS */
+.resultado-rastreo{
+  background: #eef8ff;
+  border-left: 5px solid #00a6fb;
+  padding: 14px;
+  border-radius: 12px;
+}
+
+/* TEMA 18: TRANSITION */
+.estados{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.estado-card{
+  background: linear-gradient(135deg, #e9fbf5, #e9f5ff);
+  padding: 18px;
+  border-radius: 16px;
+  text-align: center;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+.estado-card:hover{
+  background: linear-gradient(135deg, #00d084, #00a6fb);
+  color: #06283d;
+  transform: scale(1.05);
+}
+
+/* TEMA 19: COLUMNAS */
 .columnas{
   column-count: 2;
-  column-gap: 25px;
+  column-gap: 30px;
+}
+
+/* ARQUITECTURA */
+.card-degradado{
+  background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(224,247,250,0.92));
+}
+
+.arquitectura{
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.arquitectura div{
+  flex: 1;
+  background: #06283d;
+  color: white;
+  padding: 18px;
+  border-radius: 16px;
+  text-align: center;
+  font-weight: bold;
+}
+
+pre{
+  background: #0f172a;
+  color: #d1fae5;
+  padding: 15px;
+  border-radius: 16px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+}
+
+/* TEMA 25: CANVAS */
+#canvas-flujo{
+  width: 100%;
+  max-width: 600px;
+  height: 230px;
+  border: 2px dashed #00a6fb;
+  border-radius: 18px;
+  background: white;
+  display: block;
+  margin: 12px 0;
+}
+
+/* TEMA 27: EDITABLE */
+.editable{
+  border: 2px dashed #00a6fb;
+  background: #eef8ff;
+  padding: 15px;
+  border-radius: 15px;
+  min-height: 90px;
+  margin: 12px 0;
+}
+
+/* BACKLOG */
+.backlog{
+  padding-left: 20px;
+}
+
+.backlog li{
+  margin-bottom: 8px;
 }
 
 /* MULTIMEDIA */
 .media-redonda{
-  border-radius: 12px;
-}
-
-video{
-  max-height: 220px;
-  object-fit: cover;
+  border-radius: 18px;
 }
 
 .audio-estilo{
   width: 100%;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
-/* CONTACTO */
-.contacto{
-  text-align: center;
-}
-
-/* FOOTER */
-footer{
-  background: #1f3d2d;
-  color: white;
-  text-align: center;
-  padding: 16px;
-  margin-top: 18px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px){
-  .doble-grid,
-  .formulario{
-    grid-template-columns: 1fr;
-  }
-
-  .float-img{
-    float: none;
-    margin: 0 0 12px 0;
-    text-align: center;
-  }
-
-  .columnas{
-    column-count: 1;
-  }
-
-  .hero{
-    padding: 24px 15px;
-  }
-
-  .hero h1{
-    font-size: 1.6rem;
-  }
-
-  .logo{
-    width: 80px;
-    height: 80px;
-  }
-
-  nav a{
-    display: inline-block;
-    margin: 4px 8px;
-  }
-  /* =========================
-TEMA 22: TRANSPARENCIA Y DEGRADADOS
-========================= */
-
-.card {
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(8px);
-}
-
-.hero {
-  background: linear-gradient(135deg, rgba(42,96,65,0.95), rgba(88,150,112,0.85));
-}
-
-/* =========================
-TEMA 23: ANIMACIONES
-========================= */
-
-.animar {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: aparecer 1s ease forwards;
-}
-
-@keyframes aparecer {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-button {
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-button:hover {
-  transform: scale(1.05);
-}
-
-/* =========================
-TEMA 24: SVG
-========================= */
-
-.svg-decoracion {
-  width: 100%;
-  height: 100px;
-}
-
-/* =========================
-TEMA 25: CANVAS
-========================= */
-
-#canvasDonacion {
-  border: 2px dashed #2f6b49;
-  border-radius: 12px;
-  width: 100%;
-  max-width: 400px;
-  background: #f9f9f9;
-}
-
-/* =========================
-TEMA 27: EDITABLE
-========================= */
-
-.editable {
-  border: 2px dashed #aaa;
-  padding: 10px;
-  border-radius: 8px;
-  cursor: text;
-}
-
-/* =========================
-TEMA 26: RESPONSIVE MEJORADO
-========================= */
-
-@media (max-width: 768px){
-  .doble-grid{
-    grid-template-columns: 1fr;
-  }
-
-  img{
-    max-width: 100%;
-    height: auto;
-  }
-}
+/* TEMA 23: ANIMACIONES */
 .animar{
   opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
+  transform: translateY(35px);
+  transition: 0.8s ease;
 }
 
 .animar.visible{
   opacity: 1;
   transform: translateY(0);
 }
+
+/* FOOTER */
+footer{
+  background: #06283d;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 25px;
+}
+
+/* TEMA 26: RESPONSIVE */
+@media(max-width: 800px){
+  .hero-contenido,
+  .doble-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1{
+    font-size: 2.2rem;
+  }
+
+  .rastreo-box,
+  .arquitectura,
+  .metricas{
+    flex-direction: column;
+  }
+
+  .estados{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .columnas{
+    column-count: 1;
+  }
+
+  .float-img{
+    float: none;
+    margin: 0 0 15px 0;
+  }
+
+  nav a{
+    display: inline-block;
+    margin: 5px 8px;
+  }
 }
