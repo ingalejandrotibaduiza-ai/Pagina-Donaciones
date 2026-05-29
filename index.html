@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- TEMA 26: Adaptación a móviles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Fundación Luz de Esperanza | Donaciones Solidarias</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="icon" href="favicon.png">
+</head>
+
+<body>
+
+  <!-- HERO PRINCIPAL -->
+  <header id="inicio" class="hero">
+    <div class="hero-capa">
+      <div class="hero-contenido">
+        <div class="hero-texto">
+          <p class="mini-titulo">Campaña solidaria 2026</p>
+          <h1>Fundación Luz de Esperanza</h1>
+          <p>
+            Ayudamos a niños, familias y comunidades vulnerables mediante donaciones
+            de alimentos, útiles escolares, ropa, apoyo económico y acompañamiento social.
+          </p>
+
+          <div class="botones-hero">
+            <a href="#donar" class="btn-principal">Quiero donar</a>
+            <a href="#impacto" class="btn-secundario">Ver impacto</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h2>Meta de la campaña</h2>
+          <p>
+            Reunir recursos para entregar mercados, kits escolares y ayudas básicas
+            a familias en situación de vulnerabilidad.
+          </p>
+          <span class="estado-badge">Campaña activa</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- TEMA 24: SVG decorativo -->
+  <svg class="svg-onda" viewBox="0 0 1440 120">
+    <path fill="#ffffff" fill-opacity="1"
+      d="M0,64L80,69.3C160,75,320,85,480,74.7C640,64,800,32,960,32C1120,32,1280,64,1360,80L1440,96V120H0Z">
+    </path>
+  </svg>
+
+  <!-- NAVEGACIÓN -->
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#causa">Causa</a>
+    <a href="#donar">Donar</a>
+    <a href="#impacto">Impacto</a>
+    <a href="#multimedia">Multimedia</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <main class="contenedor">
+
+    <!-- TEMA 11: FLOAT -->
+    <section id="causa" class="card float-section animar">
+      <div class="float-img">
+        <div class="icono-grande">💚</div>
+      </div>
+
+      <h2>Nuestra causa</h2>
+
+      <p>
+        La <strong>Fundación Luz de Esperanza</strong> trabaja para apoyar a personas
+        que atraviesan situaciones difíciles. Nuestro propósito es convertir pequeñas
+        donaciones en grandes oportunidades.
+      </p>
+
+      <p>
+        Cada aporte nos ayuda a entregar alimentos, útiles escolares, ropa, medicamentos
+        básicos y apoyo comunitario a quienes más lo necesitan.
+      </p>
+
+      <p class="mensaje-final">
+        <strong>Objetivo:</strong> crear una red solidaria donde todos puedan ayudar de forma fácil, clara y segura.
+      </p>
+    </section>
+
+    <!-- TEMA 12: CENTRADO -->
+    <section class="card centrado animar">
+      <p class="mini-titulo oscuro">Por qué donar</p>
+      <h2>Un pequeño aporte puede cambiar una vida</h2>
+      <p>
+        No se necesita donar mucho para hacer la diferencia. Cuando muchas personas ayudan,
+        el impacto se multiplica.
+      </p>
+    </section>
+
+    <!-- TEMA 13: FLEXBOX -->
+    <section id="impacto" class="card animar">
+      <h2>Áreas de apoyo</h2>
+      <p>Estas son las principales áreas donde usamos las donaciones recibidas:</p>
+
+      <div class="flex-contenedor">
+        <div class="flex-item">
+          <span>🍲</span>
+          <h3>Alimentación</h3>
+          <p>Entrega de mercados y alimentos básicos para familias vulnerables.</p>
+        </div>
+
+        <div class="flex-item">
+          <span>📚</span>
+          <h3>Educación</h3>
+          <p>Kits escolares, cuadernos, colores, morrales y apoyo académico.</p>
+        </div>
+
+        <div class="flex-item">
+          <span>👕</span>
+          <h3>Ropa</h3>
+          <p>Recolección y entrega de ropa en buen estado para niños y adultos.</p>
+        </div>
+
+        <div class="flex-item">
+          <span>🤝</span>
+          <h3>Bienestar</h3>
+          <p>Acompañamiento comunitario, jornadas sociales y apoyo emocional.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRID + POSITION + TRANSFORM -->
+    <section class="doble-grid">
+
+      <!-- TEMA 14: POSITION -->
+      <section class="card position-box animar">
+        <div class="etiqueta">Activa</div>
+        <h2>Campaña del mes</h2>
+        <p>
+          Durante este mes estamos recolectando alimentos no perecederos y donaciones
+          económicas para entregar mercados a 50 familias.
+        </p>
+      </section>
+
+      <!-- TEMA 15: TRANSFORM -->
+      <section class="card centrado animar">
+        <h2 class="zoom">Tu donación cambia vidas ✨</h2>
+        <p>
+          Haz parte de esta cadena de ayuda y esperanza.
+        </p>
+      </section>
+
+    </section>
+
+    <!-- FORMULARIO + DASHBOARD -->
+    <section id="donar" class="doble-grid">
+
+      <!-- TEMA 16: FORMULARIO -->
+      <section class="card animar">
+        <h2>Haz tu donación</h2>
+        <p class="texto-suave">
+          Completa este formulario para registrar tu intención de donar.
+        </p>
+
+        <form id="form-donacion">
+
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" placeholder="Ej: Laura Gómez">
+
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" placeholder="Ej: correo@email.com">
+
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" placeholder="Ej: 3001234567">
+
+          <label for="ciudad">Ciudad</label>
+          <input type="text" id="ciudad" placeholder="Ej: Bogotá">
+
+          <label for="tipo">Tipo de donación</label>
+          <select id="tipo">
+            <option value="">Seleccione una opción</option>
+            <option>Dinero</option>
+            <option>Alimentos</option>
+            <option>Ropa</option>
+            <option>Útiles escolares</option>
+            <option>Medicamentos básicos</option>
+          </select>
+
+          <label for="monto">Monto aproximado</label>
+          <input type="number" id="monto" placeholder="Ej: 50000">
+
+          <label for="mensaje">Mensaje de apoyo</label>
+          <textarea id="mensaje" rows="4" placeholder="Escribe un mensaje bonito para la comunidad"></textarea>
+
+          <label class="check-line">
+            <input type="checkbox" id="terminos">
+            Acepto que esta información se use para registrar mi donación.
+          </label>
+
+          <button type="submit">Registrar donación</button>
+        </form>
+
+        <p id="mensaje-guardado" class="mensaje-exito"></p>
+      </section>
+
+      <!-- PANEL DE IMPACTO -->
+      <section class="card animar">
+        <h2>Panel de impacto</h2>
+        <p class="texto-suave">
+          Resumen simulado de las donaciones registradas en la página.
+        </p>
+
+        <div class="metricas">
+          <div>
+            <strong id="total-donaciones">0</strong>
+            <span>Donaciones</span>
+          </div>
+          <div>
+            <strong id="total-recaudado">$0</strong>
+            <span>Recaudado</span>
+          </div>
+          <div>
+            <strong>50</strong>
+            <span>Familias meta</span>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Donante</th>
+              <th>Tipo</th>
+              <th>Monto</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-donaciones">
+            <tr>
+              <td>Ana Pérez</td>
+              <td>Alimentos</td>
+              <td><span class="tag bodega">$30.000</span></td>
+            </tr>
+            <tr>
+              <td>Carlos Ruiz</td>
+              <td>Dinero</td>
+              <td><span class="tag entregado">$80.000</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="imagen-dashboard">
+          <img src="Images/imagen2.jpg" alt="Niño beneficiado por donaciones">
+        </div>
+      </section>
+
+    </section>
+
+    <!-- RASTREO DE DONACIÓN -->
+    <section class="card animar">
+      <h2>Consulta simbólica de donación</h2>
+      <p>
+        En esta sección el usuario puede consultar un registro de donación usando el nombre del donante.
+      </p>
+
+      <div class="rastreo-box">
+        <input type="text" id="donante-buscar" placeholder="Ej: Ana Pérez">
+        <button id="btn-buscar">Buscar donación</button>
+      </div>
+
+      <div id="resultado-busqueda" class="resultado-rastreo">
+        Ingresa un nombre para consultar una donación registrada.
+      </div>
+    </section>
+
+    <!-- TEMA 17: IFRAME MAPA -->
+    <section class="card animar">
+      <h2>Ubicación de la fundación</h2>
+      <p>
+        Mapa de referencia para ubicar nuestra sede principal.
+      </p>
+
+      <iframe
+        src="https://www.google.com/maps?q=Bogota&output=embed"
+        width="100%"
+        height="260"
+        style="border:0; border-radius:16px;"
+        loading="lazy">
+      </iframe>
+    </section>
+
+    <!-- TEMA 18: TRANSITION -->
+    <section class="card animar">
+      <h2>Formas de ayudar</h2>
+
+      <div class="estados">
+        <div class="estado-card">💰 Donar dinero</div>
+        <div class="estado-card">🍚 Donar alimentos</div>
+        <div class="estado-card">👕 Donar ropa</div>
+        <div class="estado-card">📚 Donar útiles</div>
+      </div>
+    </section>
+
+    <!-- TEMA 19: COLUMNAS -->
+    <section class="card animar">
+      <h2>Nuestra misión</h2>
+
+      <div class="columnas">
+        <p>
+          Nuestra misión es conectar personas solidarias con comunidades que necesitan apoyo.
+          Creemos que la tecnología puede facilitar la ayuda social, permitiendo registrar donaciones,
+          mostrar resultados y motivar a más personas a participar. Este proyecto busca representar
+          una página web funcional donde los usuarios puedan conocer la causa, registrar su donación
+          y visualizar el impacto generado por la comunidad.
+        </p>
+      </div>
+    </section>
+
+    <!-- TEMA 22: TRANSPARENCIA Y DEGRADADOS -->
+    <section class="card card-degradado animar">
+      <h2>Transparencia en el uso de recursos</h2>
+      <p>
+        La fundación busca manejar las donaciones de forma clara y responsable.
+        Cada aporte se registra y se clasifica según el tipo de ayuda.
+      </p>
+
+      <div class="arquitectura">
+        <div>30%<br><small>Alimentación</small></div>
+        <div>25%<br><small>Educación</small></div>
+        <div>20%<br><small>Ropa</small></div>
+        <div>25%<br><small>Bienestar</small></div>
+      </div>
+    </section>
+
+    <!-- TEMA 25: CANVAS -->
+    <section class="card animar">
+      <h2>Canvas: dibuja tu mensaje solidario</h2>
+      <p>
+        En este espacio puedes dibujar un corazón, una frase o un símbolo de apoyo.
+      </p>
+
+      <canvas id="canvas-flujo" width="600" height="230"></canvas>
+
+      <br>
+      <button id="limpiar-canvas" type="button">Limpiar canvas</button>
+    </section>
+
+    <!-- TEMA 27: CONTENIDO EDITABLE -->
+    <section class="card animar">
+      <h2>Mensaje editable para la campaña</h2>
+      <p class="texto-suave">
+        Esta sección permite modificar el texto directamente en la página.
+      </p>
+
+      <div id="notas-equipo" class="editable" contenteditable="true">
+        Escribe aquí un mensaje de motivación para invitar a otras personas a donar.
+      </div>
+
+      <button id="guardar-notas" type="button">Guardar mensaje</button>
+    </section>
+
+    <!-- TEMA 28: STORAGE -->
+    <section class="card animar">
+      <h2>Registro local de donaciones</h2>
+
+      <ul class="backlog">
+        <li>Los datos del formulario se guardan temporalmente en el navegador.</li>
+        <li>El panel de impacto se actualiza al registrar una nueva donación.</li>
+        <li>El mensaje editable también se conserva usando LocalStorage.</li>
+        <li>Esta es una simulación académica para demostrar almacenamiento local.</li>
+      </ul>
+
+      <p class="mensaje-final">
+        Tema aplicado: uso de LocalStorage para guardar información sin base de datos.
+      </p>
+    </section>
+
+    <!-- TEMA 20 Y 21: VIDEO Y AUDIO -->
+    <section id="multimedia" class="doble-grid">
+
+      <section class="card animar">
+        <h2>Video de la campaña</h2>
+        <video controls width="100%" class="media-redonda">
+          <source src="video.mp4" type="video/mp4">
+          Tu navegador no soporta video.
+        </video>
+      </section>
+
+      <section class="card animar">
+        <h2>Audio de agradecimiento</h2>
+        <p>Espacio para incluir un mensaje de voz agradeciendo a los donantes.</p>
+        <audio controls class="audio-estilo">
+          <source src="audio.mp3" type="audio/mpeg">
+          Tu navegador no soporta audio.
+        </audio>
+      </section>
+
+    </section>
+
+    <section id="contacto" class="card centrado animar">
+      <h2>Contacto</h2>
+      <p><strong>Correo:</strong> contacto@luzdeesperanza.org</p>
+      <p><strong>Teléfono:</strong> 300 123 4567</p>
+      <p><strong>Ciudad:</strong> Bogotá, Colombia</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 - Fundación Luz de Esperanza | Página académica de donaciones</p>
+  </footer>
+
+  <script src="script/script.js"></script>
+</body>
+</html>

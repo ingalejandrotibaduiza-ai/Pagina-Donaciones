@@ -1,0 +1,564 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: Arial, sans-serif;
+  color: #1f2933;
+  line-height: 1.6;
+  background:
+    linear-gradient(rgba(245, 248, 255, 0.78), rgba(238, 246, 255, 0.78)),
+    url("../Images/fondo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* HERO */
+.hero{
+  min-height: 430px;
+  background:
+    linear-gradient(135deg, rgba(11, 41, 71, 0.92), rgba(0, 122, 135, 0.82)),
+    url("../Images/fondo.jpg") center/cover no-repeat;
+  color: white;
+}
+
+.hero-capa{
+  min-height: 430px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-contenido{
+  width: min(1150px, 92%);
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 25px;
+  align-items: center;
+}
+
+.mini-titulo{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #b9f6ff;
+  margin-bottom: 10px;
+}
+
+.mini-titulo.oscuro{
+  color: #007a87;
+}
+
+.hero h1{
+  font-size: 3.4rem;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.hero p{
+  font-size: 1.08rem;
+  max-width: 680px;
+  margin-bottom: 20px;
+}
+
+.botones-hero{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-principal,
+.btn-secundario{
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-principal{
+  background: #00d084;
+  color: #053b2f;
+}
+
+.btn-secundario{
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-principal:hover,
+.btn-secundario:hover{
+  transform: translateY(-3px);
+}
+
+.hero-card{
+  background: rgba(255,255,255,0.14);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 24px;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+.estado-badge{
+  display: inline-block;
+  margin-top: 12px;
+  background: #00d084;
+  color: #053b2f;
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* SVG */
+.svg-onda{
+  display: block;
+  margin-top: -70px;
+}
+
+/* NAV */
+nav{
+  background: #06283d;
+  padding: 13px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+nav a{
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover{
+  color: #00d084;
+}
+
+/* CONTENEDOR */
+.contenedor{
+  width: min(1150px, 94%);
+  margin: 25px auto;
+  display: grid;
+  gap: 18px;
+}
+
+/* TEMA 22: TRANSPARENCIA Y DEGRADADOS */
+.card{
+  background: rgba(255,255,255,0.90);
+  backdrop-filter: blur(8px);
+  padding: 22px;
+  border-radius: 22px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+  border: 1px solid rgba(255,255,255,0.55);
+}
+
+.card h2{
+  color: #06283d;
+  margin-bottom: 10px;
+  font-size: 1.75rem;
+}
+
+.card h3{
+  color: #0b7285;
+  margin: 14px 0 8px;
+}
+
+.texto-suave{
+  color: #52616b;
+  margin-bottom: 14px;
+}
+
+/* TEMA 11: FLOAT */
+.float-img{
+  float: left;
+  margin-right: 18px;
+}
+
+.icono-grande{
+  width: 95px;
+  height: 95px;
+  background: linear-gradient(135deg, #00d084, #00a6fb);
+  border-radius: 24px;
+  display: grid;
+  place-items: center;
+  font-size: 3rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.float-section{
+  overflow: auto;
+}
+
+/* TEMA 12: CENTRADO */
+.centrado{
+  text-align: center;
+}
+
+/* TEMA 13: FLEXBOX */
+.flex-contenedor{
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.flex-item{
+  flex: 1;
+  min-width: 220px;
+  background: linear-gradient(135deg, #e9fbf5, #e9f5ff);
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid #d8edf0;
+  transition: 0.3s;
+}
+
+.flex-item:hover{
+  transform: translateY(-5px);
+}
+
+.flex-item span{
+  font-size: 2rem;
+}
+
+/* GRID */
+.doble-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* TEMA 14: POSITION */
+.position-box{
+  position: relative;
+}
+
+.etiqueta{
+  position: absolute;
+  top: -12px;
+  right: 18px;
+  background: #ff6b6b;
+  color: white;
+  padding: 7px 13px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* TEMA 15: TRANSFORM */
+.zoom{
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.zoom:hover{
+  transform: scale(1.08) rotate(-1deg);
+}
+
+/* FORMULARIO */
+form{
+  margin-top: 12px;
+}
+
+label{
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #334e68;
+}
+
+input, select, textarea{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  margin-bottom: 13px;
+  font-size: 0.95rem;
+}
+
+input:focus, select:focus, textarea:focus{
+  outline: none;
+  border-color: #00a6fb;
+  box-shadow: 0 0 0 3px rgba(0,166,251,0.15);
+}
+
+button{
+  background: linear-gradient(135deg, #00d084, #00a6fb);
+  color: #06283d;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.15);
+}
+
+.mensaje-exito{
+  margin-top: 10px;
+  color: #087f5b;
+  font-weight: bold;
+}
+
+/* DASHBOARD */
+.metricas{
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.metricas div{
+  flex: 1;
+  background: #eef8ff;
+  border-radius: 15px;
+  padding: 14px;
+  text-align: center;
+}
+
+.metricas strong{
+  display: block;
+  font-size: 1.6rem;
+  color: #007a87;
+}
+
+.metricas span{
+  font-size: 0.85rem;
+  color: #52616b;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td{
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.tag{
+  padding: 5px 9px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.ruta{
+  background: #fff3bf;
+  color: #7c5c00;
+}
+
+.bodega{
+  background: #d0ebff;
+  color: #084b83;
+}
+
+.entregado{
+  background: #d3f9d8;
+  color: #1b6b35;
+}
+
+.imagen-dashboard{
+  text-align: center;
+  margin-top: 16px;
+}
+
+.imagen-dashboard img{
+  width: 100%;
+  max-width: 290px;
+  border-radius: 18px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+}
+
+/* RASTREO */
+.rastreo-box{
+  display: flex;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.rastreo-box input{
+  margin-bottom: 0;
+}
+
+.resultado-rastreo{
+  background: #eef8ff;
+  border-left: 5px solid #00a6fb;
+  padding: 14px;
+  border-radius: 12px;
+}
+
+/* TEMA 18: TRANSITION */
+.estados{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.estado-card{
+  background: linear-gradient(135deg, #e9fbf5, #e9f5ff);
+  padding: 18px;
+  border-radius: 16px;
+  text-align: center;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+.estado-card:hover{
+  background: linear-gradient(135deg, #00d084, #00a6fb);
+  color: #06283d;
+  transform: scale(1.05);
+}
+
+/* TEMA 19: COLUMNAS */
+.columnas{
+  column-count: 2;
+  column-gap: 30px;
+}
+
+/* ARQUITECTURA */
+.card-degradado{
+  background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(224,247,250,0.92));
+}
+
+.arquitectura{
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.arquitectura div{
+  flex: 1;
+  background: #06283d;
+  color: white;
+  padding: 18px;
+  border-radius: 16px;
+  text-align: center;
+  font-weight: bold;
+}
+
+pre{
+  background: #0f172a;
+  color: #d1fae5;
+  padding: 15px;
+  border-radius: 16px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+}
+
+/* TEMA 25: CANVAS */
+#canvas-flujo{
+  width: 100%;
+  max-width: 600px;
+  height: 230px;
+  border: 2px dashed #00a6fb;
+  border-radius: 18px;
+  background: white;
+  display: block;
+  margin: 12px 0;
+}
+
+/* TEMA 27: EDITABLE */
+.editable{
+  border: 2px dashed #00a6fb;
+  background: #eef8ff;
+  padding: 15px;
+  border-radius: 15px;
+  min-height: 90px;
+  margin: 12px 0;
+}
+
+/* BACKLOG */
+.backlog{
+  padding-left: 20px;
+}
+
+.backlog li{
+  margin-bottom: 8px;
+}
+
+/* MULTIMEDIA */
+.media-redonda{
+  border-radius: 18px;
+}
+
+.audio-estilo{
+  width: 100%;
+  margin-top: 12px;
+}
+
+/* TEMA 23: ANIMACIONES */
+.animar{
+  opacity: 0;
+  transform: translateY(35px);
+  transition: 0.8s ease;
+}
+
+.animar.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* FOOTER */
+footer{
+  background: #06283d;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 25px;
+}
+
+/* TEMA 26: RESPONSIVE */
+@media(max-width: 800px){
+  .hero-contenido,
+  .doble-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1{
+    font-size: 2.2rem;
+  }
+
+  .rastreo-box,
+  .arquitectura,
+  .metricas{
+    flex-direction: column;
+  }
+
+  .estados{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .columnas{
+    column-count: 1;
+  }
+
+  .float-img{
+    float: none;
+    margin: 0 0 15px 0;
+  }
+
+  nav a{
+    display: inline-block;
+    margin: 5px 8px;
+  }
+}
