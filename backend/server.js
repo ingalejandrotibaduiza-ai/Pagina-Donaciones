@@ -45,13 +45,12 @@ const PaqueteSchema = new mongoose.Schema({
   fecha:            { type: Date, default: Date.now }
 });
 
-// Generar número de guía automáticamente
-PaqueteSchema.pre("save", async function(next) {
+// Generar número de guía automáticamente (fix: sin next)
+PaqueteSchema.pre("save", async function() {
   if (!this.numeroGuia) {
     const count = await Paquete.countDocuments();
     this.numeroGuia = "RR-" + String(count + 1).padStart(5, "0");
   }
-  next();
 });
 
 const Paquete = mongoose.model("Paquete", PaqueteSchema);
@@ -71,7 +70,6 @@ const RepartidorSchema = new mongoose.Schema({
 
 const Repartidor = mongoose.model("Repartidor", RepartidorSchema);
 
-// Crear repartidores de prueba si no existen
 async function crearRepartidoresPrueba() {
   const count = await Repartidor.countDocuments();
   if (count === 0) {
@@ -140,7 +138,6 @@ app.get("/api/donaciones/stats", async (req, res) => {
 // ENDPOINTS DE PAQUETES
 // ==============================
 
-// GET todos los paquetes
 app.get("/api/paquetes", async (req, res) => {
   try {
     const paquetes = await Paquete.find().sort({ fecha: -1 });
@@ -150,7 +147,6 @@ app.get("/api/paquetes", async (req, res) => {
   }
 });
 
-// POST crear paquete
 app.post("/api/paquetes", async (req, res) => {
   try {
     const nuevo = new Paquete(req.body);
@@ -161,7 +157,6 @@ app.post("/api/paquetes", async (req, res) => {
   }
 });
 
-// GET buscar paquete por número de guía
 app.get("/api/paquetes/:guia", async (req, res) => {
   try {
     const paquete = await Paquete.findOne({ numeroGuia: req.params.guia });
@@ -172,7 +167,6 @@ app.get("/api/paquetes/:guia", async (req, res) => {
   }
 });
 
-// PUT actualizar estado y repartidor
 app.put("/api/paquetes/:id", async (req, res) => {
   try {
     const paquete = await Paquete.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -188,7 +182,6 @@ app.put("/api/paquetes/:id", async (req, res) => {
 // ENDPOINTS DE REPARTIDORES
 // ==============================
 
-// GET todos los repartidores
 app.get("/api/repartidores", async (req, res) => {
   try {
     const repartidores = await Repartidor.find({ activo: true });
@@ -198,12 +191,9 @@ app.get("/api/repartidores", async (req, res) => {
   }
 });
 
-// GET ubicaciones de repartidores (simula movimiento)
 app.get("/api/repartidores/ubicaciones", async (req, res) => {
   try {
     const repartidores = await Repartidor.find({ activo: true });
-
-    // Simular pequeño movimiento aleatorio
     const ubicaciones = repartidores.map(r => ({
       _id:      r._id,
       nombre:   r.nombre,
@@ -211,7 +201,6 @@ app.get("/api/repartidores/ubicaciones", async (req, res) => {
       lat:      r.lat + (Math.random() * 0.002 - 0.001),
       lng:      r.lng + (Math.random() * 0.002 - 0.001)
     }));
-
     res.json(ubicaciones);
   } catch (error) {
     res.status(500).json({ error: "Error al obtener ubicaciones" });
