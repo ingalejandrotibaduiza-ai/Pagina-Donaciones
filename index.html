@@ -9,6 +9,10 @@
   <title>Fundación Luz de Esperanza | Donaciones Solidarias</title>
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="icon" href="favicon.png">
+
+  <!-- Leaflet para mapas -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 
 <body>
@@ -57,6 +61,8 @@
     <a href="#donar">Donar</a>
     <a href="#impacto">Impacto</a>
     <a href="#multimedia">Multimedia</a>
+    <a href="#admin">Admin</a>
+    <a href="#rastreo">Rastrear</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
@@ -392,6 +398,97 @@
         </audio>
       </section>
 
+    </section>
+
+    <!-- PANEL DE ADMINISTRACIÓN -->
+    <section id="admin" class="card animar">
+      <p class="mini-titulo oscuro">Panel privado</p>
+      <h2>📦 Panel de Administración — Repartos Rápidos</h2>
+      <p class="texto-suave">Registra nuevos paquetes y gestiona los envíos.</p>
+
+      <div class="doble-grid">
+
+        <!-- FORMULARIO NUEVO PAQUETE -->
+        <div>
+          <h3>Registrar nuevo paquete</h3>
+          <br>
+          <label for="remitente">Remitente</label>
+          <input type="text" id="remitente" placeholder="Ej: Juan García">
+
+          <label for="destinatario">Destinatario</label>
+          <input type="text" id="destinatario" placeholder="Ej: María López">
+
+          <label for="direccionDestino">Dirección de destino</label>
+          <input type="text" id="direccionDestino" placeholder="Ej: Calle 123 #45-67">
+
+          <label for="peso">Peso (kg)</label>
+          <input type="number" id="peso" placeholder="Ej: 2.5">
+
+          <label for="dimensiones">Dimensiones</label>
+          <input type="text" id="dimensiones" placeholder="Ej: 30x20x15 cm">
+
+          <label for="repartidorAsignar">Asignar repartidor</label>
+          <select id="repartidorAsignar">
+            <option value="Sin asignar">Sin asignar</option>
+          </select>
+
+          <label for="estadoPaquete">Estado</label>
+          <select id="estadoPaquete">
+            <option value="En bodega">En bodega</option>
+            <option value="En ruta">En ruta</option>
+            <option value="Entregado">Entregado</option>
+            <option value="Incidencia">Incidencia</option>
+          </select>
+
+          <button id="btn-registrar-paquete" type="button">Registrar paquete</button>
+          <p id="mensaje-paquete" class="mensaje-exito"></p>
+        </div>
+
+        <!-- MAPA DE REPARTIDORES -->
+        <div>
+          <h3>Ubicación de repartidores en tiempo real</h3>
+          <br>
+          <div id="mapa-admin" style="height:350px; border-radius:16px;"></div>
+          <br>
+          <button id="btn-actualizar-mapa" type="button">🔄 Actualizar ubicaciones</button>
+        </div>
+
+      </div>
+
+      <!-- TABLA DE PAQUETES -->
+      <h3 style="margin-top:24px;">Lista de paquetes</h3>
+      <br>
+      <table>
+        <thead>
+          <tr>
+            <th>Guía</th>
+            <th>Remitente</th>
+            <th>Destinatario</th>
+            <th>Estado</th>
+            <th>Repartidor</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-paquetes"></tbody>
+      </table>
+    </section>
+
+    <!-- RASTREO DE PAQUETE -->
+    <section id="rastreo" class="card animar">
+      <p class="mini-titulo oscuro">Interfaz pública</p>
+      <h2>🔍 Rastrear mi paquete</h2>
+      <p class="texto-suave">Ingresa tu número de guía para ver el estado de tu envío.</p>
+
+      <div class="rastreo-box">
+        <input type="text" id="guia-buscar" placeholder="Ej: RR-00001">
+        <button id="btn-rastrear" type="button">Rastrear</button>
+      </div>
+
+      <div id="resultado-rastreo" class="resultado-rastreo" style="margin-top:12px;">
+        Ingresa un número de guía para consultar tu paquete.
+      </div>
+
+      <div id="mapa-rastreo" style="height:300px; border-radius:16px; margin-top:16px; display:none;"></div>
     </section>
 
     <section id="contacto" class="card centrado animar">
